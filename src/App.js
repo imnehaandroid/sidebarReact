@@ -1,12 +1,12 @@
 import React from 'react';
-
 import './App.css';
-import GoogleAuth from './components/googleauth'
+
+import Student from './components/student'
   
 function App() {
   return (
     <div>
-      <GoogleAuth />     
+      <Student />     
     
     </div>
     
