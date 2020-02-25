@@ -1,44 +1,33 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import Marks from './marks'
 
-export class student extends Component {
+
+ export default class student extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
-             posts : [],
-             error : ""
-        }
+            roll: 101 
+             
+        };
     }
-    
-    componentDidMount(){
-     axios.get('https://jsonplaceholder.typicode.com/posts/1/comments')
-     .then(response => {
-         console.log(response)
-         this.setState({posts : response.data})
-     }).catch(error => {
-         console.log(error)
-         this.setState({errorMsg :'Error retreiving data'})
+      
+    clickHandle = () => {
 
-     })
+        console.log("click button");
+         this.setState ({roll : 102});
+    
+    }
+    render(){
 
-    
-}
-    
-    render() {
-        const{posts, errorMsg} = this.state
-        return (
+        console.log("Student Rendered")
+        return(  
             <div>
-               List of posts{
-                   posts.lenght ?
-                   posts.map(post =>  <div key={post.id}>{post.title}</div>) :
-                   null
-               }
-             {errorMsg ? <div>{errorMsg}</div> : null}
-
+             <Marks roll = {this.state.roll} />
+            <button onClick={this.clickHandle} >chnage</button>
             </div>
-        )
-    }
-}
 
-export default student
+         ) }
+
+    
+}
