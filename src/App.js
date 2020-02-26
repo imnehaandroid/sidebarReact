@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-
-import Student from './components/student'
+import HookFrom1 from './components/hookFrom1';
   
 function App() {
   return (
     <div>
-      <Student />     
+        <HookFrom1 />
     
     </div>
     
